@@ -1,0 +1,34 @@
+{
+  "name": "react-resistanceCalculator",
+  "version": "0.0.0",
+  "description": "",
+  "main": "js/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sskyu",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^4.4.3",
+    "babel-loader": "^4.0.0",
+    "gulp": "~3.8.10",
+    "gulp-if": "~1.2.5",
+    "gulp-uglify": "~1.0.2",
+    "gulp-webpack": "~1.1.0",
+    "gulp-webserver": "^0.9.0",
+    "require-dir": "~0.1.0",
+    "gulp-cache": "^0.2.9",
+    "gulp-ruby-sass": "^0.7.1",
+    "gulp-ejs": "^1.1.0",
+    "browser-sync": "^2.7.1",
+    "gulp-image": "^0.5.7",
+    "gulp-pleeease": "^1.2.0",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-plumber": "^1.0.0",
+    "gulp-notify": "^2.2.0"
+  },
+  "dependencies": {
+    "babel-runtime": "^4.7.2",
+    "react": "^0.13.0-rc2"
+  }
+}
