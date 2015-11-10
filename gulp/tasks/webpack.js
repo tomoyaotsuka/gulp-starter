@@ -1,17 +1,19 @@
-var gulp = require('gulp');
-var gulpif = require('gulp-if');
-var uglify = require('gulp-uglify');
-var webpack = require('gulp-webpack');
-var browserSync = require('browser-sync');
-var config = require('../config');
+import gulp from 'gulp';
+import gulpLoadPlugins from 'gulp-load-plugins';
+import browserSync from 'browser-sync';
+import ordinaryConfig from '../config';
 
-gulp.task('webpack', function () {
-  return gulp.src(config.webpack.entry)
-    .pipe(webpack(config.webpack))
+const $ = gulpLoadPlugins();
+const config = ordinaryConfig;
+
+
+gulp.task('webpack', () => {
+   gulp.src(config.webpack.entry)
+    .pipe($.webpack(config.webpack))
     .pipe(gulp.dest(config.js.dest))
-    .on('end', function() {
-      return gulp.src(config.js.dest + '/' + config.webpack.output.filename)
-        .pipe(gulpif(config.js.uglify, uglify()))
+    .on('end', () => {
+       gulp.src(config.js.dest + '/' + config.webpack.output.filename)
+        .pipe($.if(config.js.uglify, $.uglify()))
         .pipe(gulp.dest(config.js.dest))
         .pipe(browserSync.reload({
           stream: true,

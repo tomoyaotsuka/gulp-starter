@@ -1,9 +1,10 @@
-var gulp = require('gulp');
-var config = require('../config');
+import gulp from 'gulp';
+import ordinaryConfig from '../config';
 
-gulp.task('default', ['bs'], function() {
-  gulp.watch(config.ejs.watch, ['ejs']);
+const config = ordinaryConfig;
+
+gulp.task('default', ['bs'], () => {
+  gulp.watch(config.jade.watch, ['jade']);
   gulp.watch(config.css.src, ['sass']);
   gulp.watch(config.js.src, ['webpack']);
-  gulp.watch(config.copy.src, ['copy']);
-})
+});

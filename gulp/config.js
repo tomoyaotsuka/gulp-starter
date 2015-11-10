@@ -1,37 +1,36 @@
-var path = require('path');
+const projectName = '_default';
 
-var projectName = 'project-name';
+const src = `./project/${projectName}/develop`;
+const dest = `./project/${projectName}/public`;
 
-var src = './project/' + projectName + '/develop';
-var dest = './project/' + projectName + '/public';
-var relativeSrcPath = path.relative('.', src);
-
+// var path = require('path');
+// var relativeSrcPath = path.relative('.', src);
 
 module.exports = {
-
   src: src,
   dest: dest,
 
-  ejs: {
-    src: [src + '/**/*.ejs', '!' + src + '/**/_*.ejs'],
-    watch: src + '/**/*.ejs',
-    json: src + '/data.json',
-    dest: dest
+  jade: {
+    src:   [ `${src}/views/**/*.jade`, `!${src}/**/_*.jade` ],
+    watch: [ `${src}/views/**/*.jade`, `${src}/resources/*.json` ],
+    json:  `${src}/resources/data.json`,
+    dest:  dest
   },
 
   css: {
-    src: [src + '/assets/css/**/*.scss', '!' + src + '/**/lib/*.scss'],
-    dest: dest + '/assets/css'
+    src:   `${src}/assets/stylesheets/**/*.scss`,
+    watch: `${src}/assets/stylesheets/**/*.scss`,
+    dest:  `${dest}/assets/stylesheets`
   },
 
   js: {
-    src: src + '/assets/js/**/*.js',
-    dest: dest + '/assets/js',
+    src:  `${src}/assets/javascripts/**/*.js`,
+    dest: `${dest}/assets/javascripts`,
     uglify: true
   },
 
   webpack: {
-    entry: src + '/assets/js/app.js',
+    entry: `${src}/assets/javascripts/app.js`,
     output: {
       filename: 'bundle.js'
     },
@@ -43,21 +42,18 @@ module.exports = {
         {
           test: /\.js$/,
           exclude: /node_modules/,
-          loader: 'babel-loader' // <- without es6 polyfills
-          // loader: 'babel-loader?experimental&optional=runtime'
+          loader: 'babel',
+          query: {
+            cacheDirectory: true
+          }
         }
       ]
     },
     devtool: 'source-map'
   },
 
-  img: {
-    src: src + '/assets/img/**',
-    dest: dest + '/assets/img'
-  },
-
-  copy: {
-    src: src + '/**/*.html',
-    dest: dest
+  imagemin: {
+    src:  `${src}/assets/images/**`,
+    dest: `${dest}/assets/images`
   }
 };

@@ -2,12 +2,11 @@
 
 ## Spec
 
-* BrowserSync
-* EJS (Template Engine)
-* Sass
-* CSS Autoprefixer
+* Jade
+* Sass(+Autoprefixer)
 * Webpack (Babel + React)
 * Imagefile Minify
+* BrowserSync
 
 ## Usage
 
@@ -31,6 +30,13 @@ I am a Designer.
 Released under the MIT License, see LICENSE.txt.
 
 ## Log
+
+### 20151110
+
+* npmをアップデート
+* gulpfileの書式をBabelに変更
+* EJSからJadeへ変更
+* ディレクトリ構造を見直し
 
 ### 20150518
 

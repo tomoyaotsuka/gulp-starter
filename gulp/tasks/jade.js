@@ -1,21 +1,21 @@
-require('es6-promise').polyfill();
-
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
 import ordinaryConfig from '../config';
 
-import sass from 'gulp-ruby-sass';
+import fs from 'fs';
 
 const $ = gulpLoadPlugins();
-const config = ordinaryConfig.css;
+const config = ordinaryConfig.jade;
 
 
 
-gulp.task('sass', () => {
-  return sass(config.src)
-    .on('error', sass.logError)
-    .pipe($.pleeease())
+gulp.task('jade', () => {
+  return gulp.src(config.src)
+    .pipe($.jade({
+      pretty: true,
+      data: JSON.parse(fs.readFileSync(config.json))
+    }))
     .pipe(gulp.dest(config.dest))
     .pipe(browserSync.reload({
       stream: true,
