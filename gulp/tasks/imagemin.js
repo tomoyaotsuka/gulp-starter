@@ -9,9 +9,10 @@ const config = ordinaryConfig.imagemin;
 
 gulp.task('imagemin', () => {
   return gulp.src(config.src)
-    .pipe($.cache($.image({
+    .pipe($.newer(config.dest))
+    .pipe($.image({
       progressive: true,
       interlaced: true
-    })))
+    }))
     .pipe(gulp.dest(config.dest));
 });

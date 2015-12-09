@@ -31,6 +31,10 @@ Released under the MIT License, see LICENSE.txt.
 
 ## Log
 
+### 20151209
+
+* gulp-cacheからgulp-newerに変更（ディレクトリ配下にまでキャッシュが及んでしまうため）
+
 ### 20151110
 
 * npmをアップデート
