@@ -1,24 +1,15 @@
-require('es6-promise').polyfill();
-
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
 import ordinaryConfig from '../config';
 
-import sass from 'gulp-ruby-sass';
-
 const $ = gulpLoadPlugins();
-const config = ordinaryConfig.css;
+const config = ordinaryConfig.copy;
 
 
 
-gulp.task('sass', () => {
-  return sass(config.src)
-    .on('error', sass.logError)
-    .pipe($.pleeease())
-    .pipe($.postcss([
-      require('css-mqpacker')
-    ]))
+gulp.task('copy', () => {
+  return gulp.src(config.src)
     .pipe(gulp.dest(config.dest))
     .pipe(browserSync.reload({
       stream: true,

@@ -1,10 +1,17 @@
 import gulp from 'gulp';
+import runSequence from 'run-sequence';
 import ordinaryConfig from '../config';
 
 const config = ordinaryConfig;
 
-gulp.task('default', ['bs'], () => {
-  gulp.watch(config.jade.watch, ['jade']);
-  gulp.watch(config.css.src, ['sass']);
-  gulp.watch(config.js.src, ['webpack']);
+
+
+gulp.task('default', (callback) => {
+  runSequence(
+    'del',
+    ['jade', 'sass', 'webpack', 'imagemin', 'copy'],
+    'bs',
+    'watch',
+    callback
+  );
 });

@@ -31,9 +31,16 @@ Released under the MIT License, see LICENSE.txt.
 
 ## Log
 
+### 20151210
+
+* Add del
+* Add gulp-watch（ファイルの新規追加も監視下）
+* Add gulp-postcss&css-mqpacker（メディアクエリに関する記述を一元化）
+* Add run-sequence（デフォルトの[gulp]タスクを直列/並列化）
+
 ### 20151209
 
-* gulp-cacheからgulp-newerに変更（ディレクトリ配下にまでキャッシュが及んでしまうため）
+* gulp-cacheからgulp-newerに変更（ディレクトリ配下にまでキャッシュが及んでしまうため
 
 ### 20151110
 
