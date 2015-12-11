@@ -11,14 +11,14 @@ module.exports = {
   dest: dest,
 
   jade: {
-    src:   [ `${src}/views/**/*.jade`, `!${src}/**/_*.jade` ],
+    src:   [ `${src}/views/**/*.jade`, `!${src}/views/application/*.jade`, `!${src}/views/layouts/*.jade` ],
     watch: [ `${src}/views/**/*.jade`, `${src}/resources/*.json` ],
     json:  `${src}/resources/data.json`,
     dest:  dest
   },
 
   css: {
-    src:   `${src}/assets/stylesheets/**/*.scss`,
+    src:   `${src}/assets/stylesheets/application.scss`,
     watch: `${src}/assets/stylesheets/**/*.scss`,
     dest:  `${dest}/assets/stylesheets`
   },
@@ -53,7 +53,12 @@ module.exports = {
   },
 
   imagemin: {
-    src:  `${src}/assets/images/**`,
-    dest: `${dest}/assets/images`
+    src:  `${src}/assets/images/**/*`,
+    dest: `${dest}/assets/images/`
+  },
+
+  copy: {
+    src: `${src}/assets/javascripts/libraries/*.js`,
+    dest: `${dest}/assets/javascripts/libraries/`
   }
 };

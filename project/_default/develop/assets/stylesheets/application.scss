@@ -1,8 +1,7 @@
 @charset "utf-8";
 
-@import "libraries/_normalize.scss";
-@import "libraries/_mixin.scss";
-
-body {
-  backdrop-filter: blur(10px);
-}
+@import "libraries/normalize";
+@import "libraries/mixin";
+@import "common";
+@import "index";
+@import "smartphone/index";

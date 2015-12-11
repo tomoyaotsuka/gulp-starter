@@ -3,7 +3,7 @@
 ## Spec
 
 * Jade
-* Sass(+Autoprefixer)
+* Sass (+Autoprefixer)
 * Webpack (Babel + React)
 * Imagefile Minify
 * BrowserSync
@@ -27,9 +27,13 @@ I am a Designer.
 
 ## License
 
-Released under the MIT License, see LICENSE.txt.
+Released under the MIT License: http://www.opensource.org/licenses/MIT
 
 ## Log
+
+### 20151211
+
+* Jadeの継承などを含み、テンプレートをアップデート
 
 ### 20151210
 
@@ -40,7 +44,7 @@ Released under the MIT License, see LICENSE.txt.
 
 ### 20151209
 
-* gulp-cacheからgulp-newerに変更（ディレクトリ配下にまでキャッシュが及んでしまうため
+* 画像圧縮のキャッシュがディレクトリ配下の同名ファイルにまで及んでしまうため、gulp-cacheからgulp-newerに変更
 
 ### 20151110
 

@@ -1,3 +1,20 @@
 {
-  "siteName": "Gulp Starter"
+  "sitename": "Gulp Starter",
+  "keywords": "",
+  "description": "",
+
+  "og": {
+    "title": "",
+    "type": "website",
+    "url": "",
+    "description": "",
+    "site_name": "",
+    "image": "",
+    "locale": "ja_JP",
+    "app_id": ""
+  },
+
+  "ga": {
+    "category": ""
+  }
 }
