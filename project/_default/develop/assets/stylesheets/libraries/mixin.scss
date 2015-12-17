@@ -16,7 +16,7 @@ $black: #000;
 //------------------------------------------------------------
 
 $serif: "Garamond Premier Pro", "Adobe Garamond Pro", Garamond, serif;
-$sans: "Gill Sans", Helvetica, Arial, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+$sans: Helvetica, Arial, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
 $easeOutQuint: cubic-bezier(0.23, 1, 0.32, 1);
 
 
@@ -28,6 +28,8 @@ $sp: 768px;
 
 // layer
 //------------------------------------------------------------
+
+$l0: 0;
 
 
 
@@ -56,7 +58,7 @@ $sp: 768px;
 @mixin media($mediaSize) {
 
   @if $mediaSize == sp {
-    @media screen and (max-width: $sp + px) {
+    @media screen and (max-width: $sp) {
       @content
     }
   }

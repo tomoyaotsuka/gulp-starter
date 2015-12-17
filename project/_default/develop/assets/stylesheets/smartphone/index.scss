@@ -1,3 +1,5 @@
-@media screen and (max-width: $sp + px) {
-  
+@media screen and (max-width: $sp) {
+  body {
+    background: #000;
+  }
 }
