@@ -20,4 +20,7 @@ gulp.task('watch', () => {
   $.watch(config.copy.src, (event) => {
     gulp.start('copy');
   });
+  $.watch(config.imagemin.src, (event) => {
+    gulp.start('imagemin');
+  });
 });
