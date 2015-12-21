@@ -58,7 +58,7 @@ module.exports = {
   },
 
   copy: {
-    src: `${src}/assets/javascripts/libraries/*.js`,
-    dest: `${dest}/assets/javascripts/libraries/`
+    src: `${src}/assets/javascripts/libraries/**/*.js`,
+    dest: dest
   }
 };

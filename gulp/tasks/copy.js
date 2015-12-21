@@ -9,7 +9,7 @@ const config = ordinaryConfig.copy;
 
 
 gulp.task('copy', () => {
-  return gulp.src(config.src)
+  return gulp.src(config.src, { base: ordinaryConfig.src })
     .pipe(gulp.dest(config.dest))
     .pipe(browserSync.reload({
       stream: true,
