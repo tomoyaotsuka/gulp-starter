@@ -31,6 +31,13 @@ Released under the MIT License: http://www.opensource.org/licenses/MIT
 
 ## Log
 
+### 20160216
+
+* JavaScriptライブラリの結合・圧縮
+* ビルドタスク追加
+* webpackにオプション追加（モジュールの重複回避、圧縮）
+* デフォルトテンプレートのアップデート
+
 ### 20151211
 
 * Jadeの継承などを含み、テンプレートをアップデート
