@@ -1,6 +1,6 @@
 import webpack from 'webpack';
 
-const projectName = '_default';
+const projectName = '_oridinal';
 
 const src = `./project/${projectName}/develop`;
 const dest = `./project/${projectName}/public`;
