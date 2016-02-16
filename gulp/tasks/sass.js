@@ -15,7 +15,11 @@ const config = ordinaryConfig.css;
 gulp.task('sass', () => {
   return sass(config.src)
     .on('error', sass.logError)
-    .pipe($.pleeease())
+    .pipe($.pleeease({
+      autoprefixer: {
+        browsers: ["last 4 versions"]
+      }
+    }))
     .pipe($.postcss([
       require('css-mqpacker')
     ]))
