@@ -16,6 +16,7 @@ gulp.task('watch', () => {
   });
   $.watch(config.js.src, (event) => {
     gulp.start('webpack');
+    gulp.start('javascript');
   });
   $.watch(config.copy.src, (event) => {
     gulp.start('copy');
