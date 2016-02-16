@@ -1,3 +1,5 @@
+import webpack from 'webpack';
+
 const projectName = '_default';
 
 const src = `./project/${projectName}/develop`;
@@ -57,7 +59,13 @@ module.exports = {
         }
       ]
     },
-    devtool: 'source-map'
+    devtool: 'source-map',
+    plugins: [
+      new webpack.optimize.DedupePlugin(),
+      new webpack.optimize.OccurenceOrderPlugin(),
+      new webpack.optimize.AggressiveMergingPlugin(),
+      new webpack.optimize.UglifyJsPlugin({minimize: true})
+    ]
   },
 
   imagemin: {

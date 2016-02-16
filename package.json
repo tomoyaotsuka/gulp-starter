@@ -36,7 +36,8 @@
     "gulp-webserver": "^0.9.0",
     "jade": "^1.11.0",
     "require-dir": "~0.3.0",
-    "run-sequence": "^1.1.5"
+    "run-sequence": "^1.1.5",
+    "webpack": "^1.12.13"
   },
   "dependencies": {
     "babel-runtime": "^6.0.14",
