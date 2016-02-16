@@ -14,7 +14,7 @@ gulp.task('watch', () => {
   $.watch(config.css.watch, (event) => {
     gulp.start('sass');
   });
-  $.watch(config.js.src, (event) => {
+  $.watch(config.js.watch, (event) => {
     gulp.start('webpack');
     gulp.start('javascript');
   });
