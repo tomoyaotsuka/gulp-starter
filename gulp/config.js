@@ -24,8 +24,16 @@ module.exports = {
   },
 
   js: {
-    src:  `${src}/assets/javascripts/**/*.js`,
-    dest: `${dest}/assets/javascripts`,
+    src:   [
+      `${src}/assets/javascripts/libraries/jquery.pjax.min.js`,
+      `${src}/assets/javascripts/libraries/jquery.preload.min.js`,
+      `${src}/assets/javascripts/libraries/TweenLite.js`,
+      `${src}/assets/javascripts/libraries/TimelineLite.js`,
+      `${src}/assets/javascripts/libraries/CSSPlugin.min.js`
+    ],
+    dest:  `${dest}/assets/javascripts`,
+    watch: `${src}/assets/javascripts/**/*.js`,
+    name:  'libraries.js',
     uglify: true
   },
 

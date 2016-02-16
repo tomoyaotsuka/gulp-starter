@@ -9,7 +9,7 @@ const config = ordinaryConfig;
 gulp.task('default', (callback) => {
   runSequence(
     'del',
-    ['jade', 'sass', 'webpack', 'imagemin', 'copy'],
+    ['jade', 'sass', 'webpack', 'javascript', 'imagemin', 'copy'],
     'bs',
     'watch',
     callback
