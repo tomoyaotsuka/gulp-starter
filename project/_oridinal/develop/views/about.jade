@@ -1,0 +1,12 @@
+extends ./layouts/application.jade
+block vars
+  - pageClass = "about"
+  - pageId    = "about"
+block body
+  div(class="inside page-#{pageClass}", id="#{pageId}")
+    p About page.
+    ul
+      li
+        a(href="./index.html") index
+      li
+        a(href="./about.html") about

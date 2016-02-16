@@ -1,0 +1,29 @@
+doctype html
+block vars
+- env = "development"
+html(lang="ja")
+  head(prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#")
+    if pageTitle
+      title #{pageTitle} | #{sitename}
+    else
+      title #{sitename}
+
+    include ../application/meta.jade
+
+    block css
+      link(href="./assets/stylesheets/application.css", rel="stylesheet")
+    block js
+      script(src="//ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js")
+      script(src="./assets/javascripts/libraries.min.js")
+      script(src="./assets/javascripts/bundle.js")
+
+  body
+    include ../application/ga.jade
+
+    block header
+      include ../application/header.jade
+      
+    block body
+      
+    block footer
+      include ../application/footer.jade

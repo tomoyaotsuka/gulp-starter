@@ -1,0 +1,12 @@
+extends ./layouts/application.jade
+block vars
+  - pageClass = "index"
+  - pageId    = "index"
+block body
+  div(class="inside page-#{pageClass}", id="#{pageId}")
+    p Sample text.
+    ul
+      li
+        a(href="./index.html") index
+      li
+        a(href="./about.html") about
