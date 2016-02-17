@@ -1,16 +1,30 @@
-import webpack from 'webpack';
+import minimist from 'minimist';
+import webpack  from 'webpack';
 
-const projectName = '_oridinal';
+const minimistOption = {
+  string: ['env','dir'],
+  default: {
+    env: 'development',
+    dir: '_oridinal'
+  }
+};
+const options = minimist(process.argv.slice(2), minimistOption);
+const src     = `./project/${options.dir}/develop`;
+const dest    = `./project/${options.dir}/public`;
 
-const src = `./project/${projectName}/develop`;
-const dest = `./project/${projectName}/public`;
-
-// var path = require('path');
-// var relativeSrcPath = path.relative('.', src);
+if ( options.env == 'production' ) {
+  const isProduction = true;
+}
+else {
+  const isProduction = false;
+}
 
 module.exports = {
-  src: src,
+
+  src:  src,
   dest: dest,
+
+  isProduction: isProduction,
 
   jade: {
     src:   [ `${src}/views/**/*.jade`, `!${src}/views/application/*.jade`, `!${src}/views/layouts/*.jade` ],

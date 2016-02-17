@@ -31,6 +31,10 @@ Released under the MIT License: http://www.opensource.org/licenses/MIT
 
 ## Log
 
+### 20160217
+
+* コマンドライン引数による開発・本番環境とプロジェクトの指定
+
 ### 20160216
 
 * JavaScriptライブラリの結合・圧縮
