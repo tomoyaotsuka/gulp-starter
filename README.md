@@ -1,21 +1,26 @@
 # Gulp init project
 
-## Spec
+## SPEC
 
 * Jade
 * Sass (+Autoprefixer)
-* Webpack (Babel + React)
+* JavaScript Concat & Uglify
+* Webpack (Babel+Options, React)
 * Imagefile Minify
 * BrowserSync
+* CLI Argument（--env, --dir）
 
-## Usage
+## USAGE
 
     $ npm install --global gulp
     $ cd (project folder)
     $ npm install
     $ gulp
+    
+    <!-- CLI Argument -->
+    $ gulp --env (development or staging or production) --dir (project directory name)
 
-## Author
+## AUTHOR
 
 ### Tomoya Otsuka
 
@@ -25,11 +30,11 @@ I am a Designer.
 * [twitter](https://twitter.com/tomoya_otsuka)
 * [Pinterest](http://jp.pinterest.com/tomoyaotsuka/)
 
-## License
+## LICENSE
 
 Released under the MIT License: http://www.opensource.org/licenses/MIT
 
-## Log
+## LOG
 
 ### 20160217
 
