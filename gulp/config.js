@@ -2,7 +2,7 @@ import minimist from 'minimist';
 import webpack  from 'webpack';
 
 const minimistOption = {
-  string: ['env','dir'],
+  string:  [ 'env', 'dir' ],
   default: {
     env: 'development',
     dir: '_oridinal'
@@ -12,11 +12,9 @@ const options = minimist(process.argv.slice(2), minimistOption);
 const src     = `./project/${options.dir}/develop`;
 const dest    = `./project/${options.dir}/public`;
 
+let isProduction = false;
 if ( options.env == 'production' ) {
-  const isProduction = true;
-}
-else {
-  const isProduction = false;
+  isProduction = true;
 }
 
 module.exports = {
@@ -43,13 +41,16 @@ module.exports = {
     src:   [
       `${src}/assets/javascripts/libraries/jquery.pjax.min.js`,
       `${src}/assets/javascripts/libraries/jquery.preload.min.js`,
+      `${src}/assets/javascripts/libraries/jquery.mousewheel.min.js`,
+      `${src}/assets/javascripts/libraries/pixi.min.js`,
+      `${src}/assets/javascripts/libraries/three.min.js`,
       `${src}/assets/javascripts/libraries/TweenLite.js`,
       `${src}/assets/javascripts/libraries/TimelineLite.js`,
       `${src}/assets/javascripts/libraries/CSSPlugin.min.js`
     ],
     dest:  `${dest}/assets/javascripts`,
     watch: `${src}/assets/javascripts/**/*.js`,
-    name:  'libraries.js',
+    name:  'libraries',
     uglify: true
   },
 

@@ -18,15 +18,15 @@ gulp.task('javascript', (callback) => {
 
 gulp.task('concat', () => {
   return gulp.src(config.src)
-    .pipe($.concat(config.name))
+    .pipe($.concat(config.name+'.js'))
     .pipe(gulp.dest(config.dest));
 });
 
 gulp.task('uglify', () => {
-  return gulp.src(config.dest+'/'+config.name)
+  return gulp.src(config.dest+'/'+config.name+'.js')
     .pipe($.uglify({
       preserveComments: 'some'
     }))
-    .pipe($.rename('libraries.min.js'))
+    .pipe($.rename(config.name+'.min.js'))
     .pipe(gulp.dest(config.dest));
 });
