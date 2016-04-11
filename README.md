@@ -16,7 +16,7 @@
     $ cd (project folder)
     $ npm install
     $ gulp
-    
+
     <!-- CLI Argument -->
     $ gulp --env (development or staging or production) --dir (project directory name)
 
@@ -35,6 +35,10 @@ I am a Designer.
 Released under the MIT License: http://www.opensource.org/licenses/MIT
 
 ## LOG
+
+### 20160411
+
+* EditorConfig
 
 ### 20160217
 
